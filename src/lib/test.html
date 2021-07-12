@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      .img-city {
+        width: 500px;
+        height: 280px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <img
+        id="test-img"
+        class="img-city"
+        src="http://placeimg.com/640/480/city"
+      />
+    </div>
+    <script>
+      const img = document.getElementById("test-img")
+      img.onmouseover = zoomIn
+      img.onmouseout = zoomOut
+      function zoomIn(event) {
+        event.target.style.transform = "scale(1.2)"
+        event.target.style.zIndex = 1
+        event.target.style.transition = "all 0.5s"
+      }
+
+      function zoomOut(event) {
+        event.target.style.transform = "scale(1)"
+        event.target.style.zIndex = 0
+        event.target.style.transition = "all 0.5s"
+      }
+    </script>
+  </body>
+</html>
